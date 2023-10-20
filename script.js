@@ -1,14 +1,16 @@
 // Global Constants
 
 const container = document.querySelector(".container");
-const gridSize = 24;
+const clearButton = document.querySelector("#clear-button");
+const changeButton = document.querySelector("#change-button");
+const initialGridSize = 24;
 
 // Global Variables
 
 let isChangeable = false;
 
 
-function createSquare() {
+function createSquare(gridSize) {
     const square = document.createElement("div");
     square.classList.add("square")
     square.style.width = 100 / gridSize + "%";
@@ -32,15 +34,39 @@ function initChangeStateLogic() {
 
 function gridCreation(gridSize) {
     for(let i = 0; i < gridSize * gridSize; i++) {
-        container.appendChild(createSquare());
+        container.appendChild(createSquare(gridSize));
     }
 }
 
+function clearGrid() {
+    container.childNodes.forEach((child) => child.classList.remove("hovered"));
+}
+
+function changeGrid() {
+    let newGridSize = parseInt(prompt("Enter a new grid size smaller 100:"));
+    if(isNaN(newGridSize)) {
+        return;
+    }
+
+    if(newGridSize > 100) {
+        return;
+    }
+
+    container.replaceChildren()
+    gridCreation(newGridSize);
+}
+
+function buttonInit() {
+    clearButton.addEventListener("click", clearGrid)
+    changeButton.addEventListener("click", changeGrid)
+}
 
 function main() {
     initChangeStateLogic();
 
-    gridCreation(gridSize);
+    buttonInit();
+
+    gridCreation(initialGridSize);
 
 
 }

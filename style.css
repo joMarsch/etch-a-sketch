@@ -5,23 +5,26 @@ html, body
 
 body {
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: azure;
 }
 
 .content {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    background-color: pink;
+    gap: 24px;
+    background-color: rgb(118, 140, 158);
 }
 
 .menu {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color: darkred;
+    background-color: rgb(104, 111, 129);
     align-self: flex-start;
     padding: 8px;
     border-radius: 12px;
+    margin: 16px;
 }
 
 .container {
@@ -33,6 +36,7 @@ body {
     flex-wrap: wrap;
     background-color: white;
     flex-shrink: 0;
+    margin: 8px;
 }
 
 .square {
