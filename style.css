@@ -1,0 +1,47 @@
+html, body
+{
+    margin: 0px; padding: 0px
+}
+
+body {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background-color: pink;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: darkred;
+    align-self: flex-start;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.container {
+    width: 400px;
+    aspect-ratio: 1/1;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    flex-shrink: 0;
+}
+
+.square {
+    border: 1px;
+    border-color: grey;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+.hovered {
+    background-color: cadetblue;
+}
