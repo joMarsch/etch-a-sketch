@@ -48,7 +48,7 @@ function changeGrid() {
         return;
     }
 
-    if(newGridSize > 100) {
+    if(newGridSize > 100 || newGridSize <= 0) {
         return;
     }
 
